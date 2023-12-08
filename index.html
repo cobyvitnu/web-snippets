@@ -27,7 +27,14 @@
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
 
-    <!-- Here you can connect JavaScript scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@1.2.3/marked.min.js"></script>
+	<script>
+		fetch('README.md')
+			.then(response => response.text())
+			.then(md => {
+				document.getElementById('main-content').innerHTML = marked(md);
+			});
+	</script>
 
 </body>
 </html>
